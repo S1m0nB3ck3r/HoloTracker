@@ -9,7 +9,7 @@ HoloTracker requires an Nvidia GPU and utilizes the Cupy library for hologram ba
 
 Here are the python library/package needed to use HoloTracker.
 
-cupy-cuda11x            12.2.0
+cupy-cuda11x            12.2.0__
 connected-components-3d 3.10.3
 Cython                  0.29.33
 matplotlib              3.8.0
