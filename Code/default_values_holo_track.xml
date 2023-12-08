@@ -15,11 +15,11 @@ path</Name>
 </Path>
 <Path>
 <Name>HoloPath</Name>
-<Val>C:\TRAVAIL\developpement\simuHologramPython\results\2023_11_23_16_10_55\holograms\holo_0.bmp</Val>
+<Val>C:\TRAVAIL\developpement\HoloTracker\Images test\mean_\images_mean_cleaned_00001.tiff</Val>
 </Path>
 <Path>
 <Name>HoloDir</Name>
-<Val>C:\TRAVAIL\developpement\simuHologramPython\results\2023_11_23_15_54_15</Val>
+<Val>C:\TRAVAIL\developpement\HoloTracker\Images test\mean_</Val>
 </Path>
 <Cluster>
 <Name>HoloParam</Name>
@@ -34,11 +34,11 @@ path</Name>
 </SGL>
 <I32>
 <Name>Holo size X</Name>
-<Val>512</Val>
+<Val>1024</Val>
 </I32>
 <I32>
 <Name>Holo size Y</Name>
-<Val>512</Val>
+<Val>1024</Val>
 </I32>
 <SGL>
 <Name>pixel size</Name>
@@ -74,11 +74,11 @@ path</Name>
 <NumElts>2</NumElts>
 <DBL>
 <Name>High pass (0=none)</Name>
-<Val>7.00000000000000</Val>
+<Val>1.00000000000000</Val>
 </DBL>
 <DBL>
 <Name>Low Pass (0=none)</Name>
-<Val>65.00000000000000</Val>
+<Val>1024.00000000000000</Val>
 </DBL>
 </Cluster>
 <Cluster>
@@ -90,7 +90,7 @@ path</Name>
 <Choice>SUM_OF_LAPLACIAN</Choice>
 <Choice>SUM_OF_VARIANCE</Choice>
 <Choice>TENENGRAD</Choice>
-<Val>0</Val>
+<Val>3</Val>
 </EW>
 <I32>
 <Name>Sum size</Name>
@@ -108,7 +108,7 @@ path</Name>
 <NumElts>4</NumElts>
 <DBL>
 <Name>Threshold ( N x Standard deviation)</Name>
-<Val>7.00000000000000</Val>
+<Val>10.00000000000000</Val>
 </DBL>
 <EW>
 <Name>Connectivity</Name>

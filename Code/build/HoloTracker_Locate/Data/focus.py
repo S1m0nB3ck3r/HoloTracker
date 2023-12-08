@@ -28,7 +28,8 @@ def focus_sum_square_of_laplacien(d_volume_IN, d_focus_OUT, sumSize):
     sizeZ, sizeY, sizeX = cp.shape(d_volume_IN)
 
     #allocation intensity plane
-    plane = cp.zeros(shape = (sizeY, sizeX), dtype = cp.float32)
+    module_plane = cp.zeros(shape = (sizeY, sizeX), dtype = cp.float32)
+    laplace_plane = cp.zeros(shape = (sizeY, sizeX), dtype = cp.float32)
 
     #si sumSize est pair rajouter 1
     sumSize = (sumSize //2) * 2  + 1
@@ -37,16 +38,19 @@ def focus_sum_square_of_laplacien(d_volume_IN, d_focus_OUT, sumSize):
 
     if d_volume_IN.dtype == cp.complex64:
         for p in range(sizeZ):
-            plane = module(d_volume_IN[p,:,:])
-            plane = cp_ndimage.laplace(plane)
-            plane = cp.square(plane)
-            cp_ndimage.convolve(plane, convolve_plane, output = d_focus_OUT[p,:,:], mode = 'reflect')
+            module_plane = module(d_volume_IN[p,:,:])
+            laplace_plane = cp_ndimage.laplace(module_plane)
+            laplace_plane = cp.square(laplace_plane)
+            # laplace_plane = laplace_plane / module_plane
+            cp_ndimage.convolve(laplace_plane, convolve_plane, output = d_focus_OUT[p,:,:], mode = 'reflect')
 
     else : # module float32
         for p in range(sizeZ):
-            plane = cp_ndimage.laplace(d_volume_IN[p,:,:])
-            plane = cp.square(plane)
-            cp_ndimage.convolve(plane, convolve_plane, output = d_focus_OUT[p,:,:], mode = 'reflect')
+            module_plane = d_volume_IN[p,:,:]
+            laplace_plane = cp_ndimage.laplace(module_plane)
+            laplace_plane = cp.square(laplace_plane)
+            # laplace_plane = laplace_plane / module_plane
+            cp_ndimage.convolve(laplace_plane, convolve_plane, output = d_focus_OUT[p,:,:], mode = 'reflect')
         
 
 def focus_sum_of_variance(d_volume_IN, d_focus_OUT, sumSize):
@@ -74,6 +78,8 @@ def focus_sum_of_variance(d_volume_IN, d_focus_OUT, sumSize):
     for p in range(sizeZ):
         module_plane = module(d_volume_IN[p,:,:])
         cp_ndimage.convolve(module_plane, convolve_mean, output = local_mean_plane, mode = 'reflect')
+        # variance_plane = cp.square( local_mean_plane - module_plane ) / local_mean_plane
+
         variance_plane = cp.square( local_mean_plane - module_plane )
         cp_ndimage.convolve(variance_plane, convolve_mean, output = d_focus_OUT[p,:,:], mode = 'reflect')
         
@@ -99,13 +105,13 @@ def focus_TENEGRAD(d_volume_IN, d_focus_OUT, sumSize):
             plane_module = module(d_volume_IN[p,:,:])
             cp_ndimage.convolve(plane_module, ten1, output = plane_ten1, mode = 'reflect')
             cp_ndimage.convolve(plane_module, ten2, output = plane_ten2, mode = 'reflect')
-            plane_tenegard = plane_ten1**2 + plane_ten2**2
+            plane_tenegard = cp.sqrt(plane_ten1**2 + plane_ten2**2)
             cp_ndimage.convolve(plane_tenegard, convolve_plane,  output = d_focus_OUT[p,:,:], mode = 'reflect')
     else : # module float32
         for p in range(sizeZ):
             cp_ndimage.convolve(d_volume_IN[p,:,:], ten1, output = plane_ten1, mode = 'reflect')
             cp_ndimage.convolve(d_volume_IN[p,:,:], ten2, output = plane_ten2, mode = 'reflect')
-            plane_tenegard = plane_ten1**2 + plane_ten2**2
+            plane_tenegard = cp.sqrt(plane_ten1**2 + plane_ten2**2)
             cp_ndimage.convolve(plane_tenegard, convolve_plane,  output = d_focus_OUT[p,:,:], mode = 'reflect')
 
 

@@ -29,7 +29,7 @@ def read_image(path_image, sizeX = 0, sizeY = 0):
 
             h_holo = h_holo[offsetY:offsetY+sizeY:1, offsetX:offsetX+sizeX:1]
         
-        h_holo = h_holo.astype('float32')
+        h_holo = h_holo.astype(np.float32)
         return(h_holo)
 
 
