@@ -30,11 +30,11 @@ path</Name>
 <NumElts>3</NumElts>
 <DBL>
 <Name>x_range(m)</Name>
-<Val>1.00000000000000E-5</Val>
+<Val>1.00000000000000E-4</Val>
 </DBL>
 <DBL>
 <Name>y_range(m)</Name>
-<Val>1.00000000000000E-5</Val>
+<Val>1.00000000000000E-4</Val>
 </DBL>
 <DBL>
 <Name>z__range(m)</Name>

@@ -23,38 +23,38 @@
 			<Item Name="typeHolo.py" Type="Document" URL="../HoloPyLib/typeHolo.py"/>
 		</Item>
 		<Item Name="subVis" Type="Folder">
+			<Item Name="activateBtnIHM.vi" Type="VI" URL="../subVis/activateBtnIHM.vi"/>
 			<Item Name="batchQueuesCommands.vi" Type="VI" URL="../subVis/batchQueuesCommands.vi"/>
+			<Item Name="calcPlotID.vi" Type="VI" URL="../subVis/calcPlotID.vi"/>
+			<Item Name="CCL_parameters.ctl" Type="VI" URL="../HoloPyLib/CCL_parameters.ctl"/>
+			<Item Name="colorScatterRandomGenerator.vi" Type="VI" URL="../subVis/colorScatterRandomGenerator.vi"/>
+			<Item Name="dataLink.ctl" Type="VI" URL="../HoloPyLib/dataLink.ctl"/>
 			<Item Name="datas.ctl" Type="VI" URL="../subVis/datas.ctl"/>
-			<Item Name="holoTracker.lvlib" Type="Library" URL="../HoloPyLib/holoTracker.lvlib"/>
+			<Item Name="defValuesLink.ctl" Type="VI" URL="../subVis/defValuesLink.ctl"/>
+			<Item Name="displayHoloListEnum.vi" Type="VI" URL="../subVis/displayHoloListEnum.vi"/>
+			<Item Name="displayMessageSender.vi" Type="VI" URL="../subVis/displayMessageSender.vi"/>
+			<Item Name="EcrireLireValeurParDefaut_HoloTrackPy_link.vi" Type="VI" URL="../subVis/EcrireLireValeurParDefaut_HoloTrackPy_link.vi"/>
+			<Item Name="EcrireLireValeurParDefaut_HoloTrackPy_locate.vi" Type="VI" URL="../subVis/EcrireLireValeurParDefaut_HoloTrackPy_locate.vi"/>
+			<Item Name="filterPortionTrajectories.vi" Type="VI" URL="../subVis/filterPortionTrajectories.vi"/>
+			<Item Name="globState.vi" Type="VI" URL="../subVis/globState.vi"/>
+			<Item Name="menuHoloTrack.rtm" Type="Document" URL="../HoloPyLib/menuHoloTrack.rtm"/>
+			<Item Name="param_defaut.ctl" Type="VI" URL="../subVis/param_defaut.ctl"/>
+			<Item Name="parameters.ctl" Type="VI" URL="../HoloPyLib/parameters.ctl"/>
+			<Item Name="plotTrajectories.vi" Type="VI" URL="../subVis/plotTrajectories.vi"/>
+			<Item Name="pythonOpenSessionPopUp.vi" Type="VI" URL="../HoloPyLib/pythonOpenSessionPopUp.vi"/>
+			<Item Name="referencesBtns.ctl" Type="VI" URL="../subVis/referencesBtns.ctl"/>
+			<Item Name="referencesLINKBtns.ctl" Type="VI" URL="../subVis/referencesLINKBtns.ctl"/>
+			<Item Name="setScatterColor.vi" Type="VI" URL="../subVis/setScatterColor.vi"/>
 			<Item Name="test_acupy.vi" Type="VI" URL="../subVis/test_acupy.vi"/>
 			<Item Name="test_unpacking.vi" Type="VI" URL="../subVis/test_unpacking.vi"/>
+			<Item Name="testGraph3D.vi" Type="VI" URL="../subVis/testGraph3D.vi"/>
+			<Item Name="testQueuesCommands.vi" Type="VI" URL="../subVis/testQueuesCommands.vi"/>
 			<Item Name="type_feature.ctl" Type="VI" URL="../HoloPyLib/type_feature.ctl"/>
 		</Item>
-		<Item Name="activateBtnIHM.vi" Type="VI" URL="../subVis/activateBtnIHM.vi"/>
-		<Item Name="calcPlotID.vi" Type="VI" URL="../subVis/calcPlotID.vi"/>
-		<Item Name="CCL_parameters.ctl" Type="VI" URL="../HoloPyLib/CCL_parameters.ctl"/>
-		<Item Name="colorScatterRandomGenerator.vi" Type="VI" URL="../subVis/colorScatterRandomGenerator.vi"/>
-		<Item Name="dataLink.ctl" Type="VI" URL="../HoloPyLib/dataLink.ctl"/>
-		<Item Name="defValuesLink.ctl" Type="VI" URL="../subVis/defValuesLink.ctl"/>
-		<Item Name="displayMessageSender.vi" Type="VI" URL="../subVis/displayMessageSender.vi"/>
-		<Item Name="EcrireLireValeurParDefaut_HoloTrackPy_link.vi" Type="VI" URL="../subVis/EcrireLireValeurParDefaut_HoloTrackPy_link.vi"/>
-		<Item Name="EcrireLireValeurParDefaut_HoloTrackPy_locate.vi" Type="VI" URL="../subVis/EcrireLireValeurParDefaut_HoloTrackPy_locate.vi"/>
-		<Item Name="filterPortionTrajectories.vi" Type="VI" URL="../subVis/filterPortionTrajectories.vi"/>
-		<Item Name="globState.vi" Type="VI" URL="../subVis/globState.vi"/>
-		<Item Name="HoloTrackerLauncher.vi" Type="VI" URL="../HoloPyLib/HoloTrackerLauncher.vi"/>
+		<Item Name="holoTracker.lvlib" Type="Library" URL="../HoloPyLib/holoTracker.lvlib"/>
 		<Item Name="main_link.vi" Type="VI" URL="../main_link.vi"/>
 		<Item Name="main_locate.vi" Type="VI" URL="../main_locate.vi"/>
 		<Item Name="main_old.vi" Type="VI" URL="../main_old.vi"/>
-		<Item Name="menuHoloTrack.rtm" Type="Document" URL="../HoloPyLib/menuHoloTrack.rtm"/>
-		<Item Name="param_defaut.ctl" Type="VI" URL="../subVis/param_defaut.ctl"/>
-		<Item Name="parameters.ctl" Type="VI" URL="../HoloPyLib/parameters.ctl"/>
-		<Item Name="plotTrajectories.vi" Type="VI" URL="../subVis/plotTrajectories.vi"/>
-		<Item Name="pythonOpenSessionPopUp.vi" Type="VI" URL="../HoloPyLib/pythonOpenSessionPopUp.vi"/>
-		<Item Name="referencesBtns.ctl" Type="VI" URL="../subVis/referencesBtns.ctl"/>
-		<Item Name="referencesLINKBtns.ctl" Type="VI" URL="../subVis/referencesLINKBtns.ctl"/>
-		<Item Name="setScatterColor.vi" Type="VI" URL="../subVis/setScatterColor.vi"/>
-		<Item Name="testGraph3D.vi" Type="VI" URL="../subVis/testGraph3D.vi"/>
-		<Item Name="testQueuesCommands.vi" Type="VI" URL="../subVis/testQueuesCommands.vi"/>
 		<Item Name="Dependencies" Type="Dependencies">
 			<Item Name="vi.lib" Type="Folder">
 				<Item Name="3D Plot Datatype.lvclass" Type="LVClass" URL="/&lt;vilib&gt;/Math Plots/3D Math Plots/3D Plot/3D Plot Datatype/3D Plot Datatype.lvclass"/>
@@ -114,6 +114,7 @@
 				<Item Name="LVBoundsTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVBoundsTypeDef.ctl"/>
 				<Item Name="LVMinMaxIncTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVMinMaxIncTypeDef.ctl"/>
 				<Item Name="LVRectTypeDef.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVRectTypeDef.ctl"/>
+				<Item Name="LVStringsAndValuesArrayTypeDef_U16.ctl" Type="VI" URL="/&lt;vilib&gt;/Utility/miscctls.llb/LVStringsAndValuesArrayTypeDef_U16.ctl"/>
 				<Item Name="NI_3D Picture Control.lvlib" Type="Library" URL="/&lt;vilib&gt;/picture/3D Picture Control/NI_3D Picture Control.lvlib"/>
 				<Item Name="NI_AALPro.lvlib" Type="Library" URL="/&lt;vilib&gt;/Analysis/NI_AALPro.lvlib"/>
 				<Item Name="NI_FileType.lvlib" Type="Library" URL="/&lt;vilib&gt;/Utility/lvfile.llb/NI_FileType.lvlib"/>
@@ -130,7 +131,6 @@
 				<Item Name="Read From XML File(array).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/Read From XML File(array).vi"/>
 				<Item Name="Read From XML File(string).vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/Read From XML File(string).vi"/>
 				<Item Name="Read From XML File.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/xml.llb/Read From XML File.vi"/>
-				<Item Name="RGB to Color.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/colorconv.llb/RGB to Color.vi"/>
 				<Item Name="Search and Replace Pattern.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Search and Replace Pattern.vi"/>
 				<Item Name="Set Bold Text.vi" Type="VI" URL="/&lt;vilib&gt;/Utility/error.llb/Set Bold Text.vi"/>
 				<Item Name="Set Pen State.vi" Type="VI" URL="/&lt;vilib&gt;/picture/picture.llb/Set Pen State.vi"/>
@@ -168,7 +168,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{37962870-B846-4A58-B4F6-207E2FD2E681}</Property>
-				<Property Name="Bld_version.build" Type="Int">15</Property>
+				<Property Name="Bld_version.build" Type="Int">17</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">HoloTracker_Link.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../build/Holo_Tracker_Link/HoloTracker_Link.exe</Property>
@@ -250,7 +250,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{D920B73B-F4AC-47EA-8DE0-671A5F4F9AAA}</Property>
-				<Property Name="Bld_version.build" Type="Int">12</Property>
+				<Property Name="Bld_version.build" Type="Int">13</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">HoloTracker_Locate.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../build/HoloTracker_Locate/HoloTracker_Locate.exe</Property>
@@ -372,7 +372,7 @@
 				<Property Name="INST_defaultDir" Type="Str">{B9BC1E67-0CA5-4223-A675-215424C1F2D6}</Property>
 				<Property Name="INST_installerName" Type="Str">installHoloTracker.exe</Property>
 				<Property Name="INST_productName" Type="Str">HoloTracker</Property>
-				<Property Name="INST_productVersion" Type="Str">1.0.10</Property>
+				<Property Name="INST_productVersion" Type="Str">1.0.11</Property>
 				<Property Name="InstSpecBitness" Type="Str">64-bit</Property>
 				<Property Name="InstSpecVersion" Type="Str">23108276</Property>
 				<Property Name="MSI_arpCompany" Type="Str">LEMTA Université de Lorraine</Property>

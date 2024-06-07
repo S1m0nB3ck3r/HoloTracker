@@ -51,12 +51,16 @@ def link(srch_range, mem):
     global memo
     search_r = srch_range
     memo = mem
-    trajectories = tp.link(f = features, search_range = search_r, memory  = memo, t_column = 'frame', pos_columns = ['x', 'y', 'z'])
-    filtered_trajectories = trajectories
-    filtered_trajectories.columns= ["frame","x","y","z", "nb_pix","particle" ]
-    filtered_trajectories = filtered_trajectories.sort_values(by=['particle', 'frame'])
+    try:
+        trajectories = tp.link(f = features, search_range = search_r, memory  = memo, t_column = 'frame', pos_columns = ['x', 'y', 'z'])
+    except:
+        return
+    else:
+        filtered_trajectories = trajectories
+        filtered_trajectories.columns= ["frame","x","y","z", "nb_pix","particle" ]
+        filtered_trajectories = filtered_trajectories.sort_values(by=['particle', 'frame'])
 
-    return filtered_trajectories.values.tolist()
+        return filtered_trajectories.values.tolist()
 
 def filter_trajectories_by_lenght(min):
     global trajectories
