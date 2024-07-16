@@ -206,35 +206,42 @@ def get_sub_plane(x, y, z, boxSizeXY, boxSizeZ, d_volume):
 
 def calc_holo_moyen(dirPath, sizeX, sizeY, extension):
 
-    os.chdir(dirPath)
-    holo_m = np.empty((sizeY,sizeX), dtype = np.float32)
-    nb_images_tot = len(os.listdir(dirPath))
-    nb_images = 0
-    start = time.time()
+    mean_dir = os.path.join(dirPath, "mean")
+    if not os.path.exists(mean_dir):
+        os.mkdir(mean_dir)
 
-    for image in os.listdir(dirPath):
-        if (image.split('.')[-1].lower() == extension.lower()):
-            nb_images +=1
-            img= Image.open(image)
-            holo = np.asarray(img)
+    mean_file_path = os.path.join(mean_dir, "mean_holo.npy")
 
-            sx = np.size(holo, axis=1)
-            sy = np.size(holo, axis=0)
+    if os.path.exists(mean_file_path):
 
-            offsetX = (sx - sizeX)//2
-            offsetY = (sy - sizeY)//2
-            
-            holo = holo[offsetY:offsetY+sizeY:1, offsetX:offsetX+sizeX:1]
-            holo_m += holo
-            img.close()
-            print(round(100* nb_images/nb_images_tot, 1), "% Done")
+        holo_m = np.load(mean_file_path, allow_pickle=True)
+        return holo_m
+    
+    else:
+        holo_m = np.empty((sizeY,sizeX), dtype = np.float32)
+        nb_images_tot = len(os.listdir(dirPath))
+        nb_images = 0
+        for image in os.listdir(dirPath):
+            if (image.split('.')[-1].lower() == extension.lower()):
+                im_path = os.path.join(dirPath, image)
+                nb_images +=1
+                img= Image.open(im_path)
+                holo = np.asarray(img)
 
-    print("Nombre d'images: ", nb_images)
-    print("Temps d'execution", time.time() - start)
+                sx = np.size(holo, axis=1)
+                sy = np.size(holo, axis=0)
 
-    holo_m = holo_m / nb_images
+                offsetX = (sx - sizeX)//2
+                offsetY = (sy - sizeY)//2
+                
+                holo = holo[offsetY:offsetY+sizeY:1, offsetX:offsetX+sizeX:1]
+                holo_m += holo
+                img.close()
+                print(round(100* nb_images/nb_images_tot, 1), "% Done")
 
-    return(holo_m)
+        holo_m = holo_m / nb_images
+        np.save(mean_file_path, arr=holo_m)
+        return(holo_m)
 
 
 def analyse_array_cplx(data):

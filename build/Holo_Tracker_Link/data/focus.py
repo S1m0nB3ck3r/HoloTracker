@@ -100,7 +100,7 @@ def focus_TENEGRAD(d_volume_IN, d_focus_OUT, sumSize):
     #allocation plan de convolution (carré de 1.0 de taille sumSize)
     convolve_plane = cp.full(fill_value=1.0 / (sumSize * sumSize), dtype=cp.float32, shape=(sumSize, sumSize))
 
-    if plane_module.dtype == cp.complex64:
+    if d_volume_IN.dtype == cp.complex64:
         for p in range(sizeZ):
             plane_module = module(d_volume_IN[p,:,:])
             cp_ndimage.convolve(plane_module, ten1, output = plane_ten1, mode = 'reflect')
