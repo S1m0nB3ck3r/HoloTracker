@@ -15,7 +15,7 @@ path</Name>
 </Path>
 <Path>
 <Name>HoloDir</Name>
-<Val>D:\MANIP_holo\simu_holo_bact\2024_07_16_11_51_12\holograms</Val>
+<Val>D:\MANIP_holo\simu_holo_spheres\2024_07_16_16_39_20\holograms</Val>
 </Path>
 <Cluster>
 <Name>HoloParam</Name>
@@ -104,7 +104,7 @@ path</Name>
 <NumElts>4</NumElts>
 <DBL>
 <Name>Threshold ( N x Standard deviation)</Name>
-<Val>7.00000000000000</Val>
+<Val>8.00000000000000</Val>
 </DBL>
 <EW>
 <Name>Connectivity</Name>

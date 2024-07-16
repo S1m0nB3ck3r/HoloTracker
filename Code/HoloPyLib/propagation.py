@@ -84,11 +84,18 @@ def d_spec_filter_FFT(d_plan_IN, d_plan_OUT, sizeX, sizeY, dMin, dMax):
 
         distanceCentre = cp.sqrt((centreX - ii)*(centreX - ii) + (centreY - jj)*(centreY - jj))
 
-        if ((distanceCentre > dMin) and (distanceCentre < dMax )):
-            #d_plan_OUT[ii, jj] = d_plan_IN[ii, jj] * cp.log(1 + (distanceCentre - dMin)/ (dMax - dMin))
-            d_plan_OUT[jj, ii] = d_plan_IN[jj, ii]
-        else:
+        if (dMin != 0 and distanceCentre < dMin) or (dMax != 0 and distanceCentre > dMax):
             d_plan_OUT[jj, ii] = 0.0 + 0.0j
+        else:
+            d_plan_OUT[jj, ii] = d_plan_IN[jj, ii]
+
+
+
+        # if ((distanceCentre > dMin) and (distanceCentre < dMax )):
+        #     #d_plan_OUT[ii, jj] = d_plan_IN[ii, jj] * cp.log(1 + (distanceCentre - dMin)/ (dMax - dMin))
+        #     d_plan_OUT[jj, ii] = d_plan_IN[jj, ii]
+        # else:
+        #     d_plan_OUT[jj, ii] = 0.0 + 0.0j
 
 
 #		spec_mask_filter_device[xy] = log(1 + (R - R_low));
@@ -205,7 +212,7 @@ lambda_milieu, magnification, pixSize, nb_pix_X, nb_pix_Y, distance, f_pix_min, 
     nBlock = math.ceil(nb_pix_X * nb_pix_Y // nthread)
     d_FFT_HOLO = fftshift(fft2(d_HOLO, norm = 'ortho'))
 
-    if ((f_pix_min != 0) and (f_pix_max != 0)):
+    if ((f_pix_min != 0) or (f_pix_max != 0)):
         d_filter_FFT(d_FFT_HOLO, d_FFT_HOLO, nb_pix_X, nb_pix_Y, f_pix_min, f_pix_max)
 
     d_calc_kernel_angular_spectrum_jit[nBlock, nthread](d_KERNEL, lambda_milieu, magnification, pixSize, nb_pix_X, nb_pix_Y, distance)
@@ -283,8 +290,7 @@ lambda_milieu, magnification, pixSize, nb_pix_X, nb_pix_Y, distancePropagIni, pa
 
     #print('somme avant fft:', cp.asnumpy(intensite(d_HOLO)).sum(), 'somme après FFT', cp.asnumpy(intensite(d_FFT_HOLO)).sum())
 
-    if ((f_pix_min != 0) and (f_pix_max != 0)):
-        d_spec_filter_FFT[nBlock, nthread](d_FFT_HOLO, d_FFT_HOLO, nb_pix_X, nb_pix_Y, f_pix_min, f_pix_max)
+    d_spec_filter_FFT[nBlock, nthread](d_FFT_HOLO, d_FFT_HOLO, nb_pix_X, nb_pix_Y, f_pix_min, f_pix_max)
 
     for i in range(nbPropag):
         distance = distancePropagIni + i * pasPropag

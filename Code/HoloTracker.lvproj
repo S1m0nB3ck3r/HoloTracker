@@ -17,7 +17,6 @@
 			<Item Name="HoloTracker_link_labview_wrapper.py" Type="Document" URL="../HoloPyLib/HoloTracker_link_labview_wrapper.py"/>
 			<Item Name="HoloTracker_Locate_Labview_wrapper.py" Type="Document" URL="../HoloPyLib/HoloTracker_Locate_Labview_wrapper.py"/>
 			<Item Name="main_holo_python.py" Type="Document" URL="../HoloPyLib/main_holo_python.py"/>
-			<Item Name="main_trackpy.py" Type="Document" URL="../HoloPyLib/main_trackpy.py"/>
 			<Item Name="propagation.py" Type="Document" URL="../HoloPyLib/propagation.py"/>
 			<Item Name="traitement_holo.py" Type="Document" URL="../HoloPyLib/traitement_holo.py"/>
 			<Item Name="typeHolo.py" Type="Document" URL="../HoloPyLib/typeHolo.py"/>
@@ -168,7 +167,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{37962870-B846-4A58-B4F6-207E2FD2E681}</Property>
-				<Property Name="Bld_version.build" Type="Int">17</Property>
+				<Property Name="Bld_version.build" Type="Int">18</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">HoloTracker_Link.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../build/Holo_Tracker_Link/HoloTracker_Link.exe</Property>
@@ -210,7 +209,7 @@
 				<Property Name="Source[4].itemID" Type="Ref">/My Computer/codePython/main_holo_python.py</Property>
 				<Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[5].destinationIndex" Type="Int">1</Property>
-				<Property Name="Source[5].itemID" Type="Ref">/My Computer/codePython/main_trackpy.py</Property>
+				<Property Name="Source[5].itemID" Type="Ref"></Property>
 				<Property Name="Source[5].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[6].destinationIndex" Type="Int">1</Property>
 				<Property Name="Source[6].itemID" Type="Ref">/My Computer/codePython/propagation.py</Property>
@@ -250,7 +249,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{D920B73B-F4AC-47EA-8DE0-671A5F4F9AAA}</Property>
-				<Property Name="Bld_version.build" Type="Int">13</Property>
+				<Property Name="Bld_version.build" Type="Int">15</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">HoloTracker_Locate.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../build/HoloTracker_Locate/HoloTracker_Locate.exe</Property>
@@ -261,7 +260,7 @@
 				<Property Name="Destination[1].path" Type="Path">../build/HoloTracker_Locate/Data</Property>
 				<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{55219ABD-9131-43CD-9704-C6C2BD930D5E}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{8F9E90C8-C558-44C0-AD5B-0B905C8BF057}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/main_locate.vi</Property>
@@ -278,9 +277,6 @@
 				<Property Name="Source[1].propertiesCount" Type="Int">5</Property>
 				<Property Name="Source[1].sourceInclusion" Type="Str">TopLevel</Property>
 				<Property Name="Source[1].type" Type="Str">VI</Property>
-				<Property Name="Source[10].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[10].itemID" Type="Ref">/My Computer/codePython/HoloTracker_Locate_Labview_wrapper.py</Property>
-				<Property Name="Source[10].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[2].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[2].itemID" Type="Ref">/My Computer/codePython/CCL3D.py</Property>
 				<Property Name="Source[2].sourceInclusion" Type="Str">Include</Property>
@@ -291,21 +287,21 @@
 				<Property Name="Source[4].itemID" Type="Ref">/My Computer/codePython/main_holo_python.py</Property>
 				<Property Name="Source[4].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[5].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[5].itemID" Type="Ref">/My Computer/codePython/main_trackpy.py</Property>
+				<Property Name="Source[5].itemID" Type="Ref">/My Computer/codePython/propagation.py</Property>
 				<Property Name="Source[5].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[6].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[6].itemID" Type="Ref">/My Computer/codePython/propagation.py</Property>
+				<Property Name="Source[6].itemID" Type="Ref">/My Computer/codePython/traitement_holo.py</Property>
 				<Property Name="Source[6].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[7].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[7].itemID" Type="Ref">/My Computer/codePython/traitement_holo.py</Property>
+				<Property Name="Source[7].itemID" Type="Ref">/My Computer/codePython/typeHolo.py</Property>
 				<Property Name="Source[7].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[8].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[8].itemID" Type="Ref">/My Computer/codePython/typeHolo.py</Property>
+				<Property Name="Source[8].itemID" Type="Ref">/My Computer/codePython/HoloTracker_link_labview_wrapper.py</Property>
 				<Property Name="Source[8].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[9].destinationIndex" Type="Int">0</Property>
-				<Property Name="Source[9].itemID" Type="Ref">/My Computer/codePython/HoloTracker_link_labview_wrapper.py</Property>
+				<Property Name="Source[9].itemID" Type="Ref">/My Computer/codePython/HoloTracker_Locate_Labview_wrapper.py</Property>
 				<Property Name="Source[9].sourceInclusion" Type="Str">Include</Property>
-				<Property Name="SourceCount" Type="Int">11</Property>
+				<Property Name="SourceCount" Type="Int">10</Property>
 				<Property Name="TgtF_companyName" Type="Str">LEMTA Université de Lorraine</Property>
 				<Property Name="TgtF_fileDescription" Type="Str">HoloTracker_Locate</Property>
 				<Property Name="TgtF_internalName" Type="Str">HoloTracker_Locate</Property>
@@ -326,8 +322,8 @@
 				<Property Name="Destination[1].type" Type="Str">absFolder</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
 				<Property Name="DistPart[0].flavorID" Type="Str">DefaultFull</Property>
-				<Property Name="DistPart[0].productID" Type="Str">{3743B708-4C36-4E0C-8FA9-9A4D90DBB68C}</Property>
-				<Property Name="DistPart[0].productName" Type="Str">NI LabVIEW Runtime 2023 Q1 (64-bit)</Property>
+				<Property Name="DistPart[0].productID" Type="Str">{45865C74-2A40-4F01-A8F5-1990FC8B0430}</Property>
+				<Property Name="DistPart[0].productName" Type="Str">NI LabVIEW Runtime 2023 Q3 Patch 2 (64-bit)</Property>
 				<Property Name="DistPart[0].SoftDep[0].exclude" Type="Bool">false</Property>
 				<Property Name="DistPart[0].SoftDep[0].productName" Type="Str">NI ActiveX Container (64-bit)</Property>
 				<Property Name="DistPart[0].SoftDep[0].upgradeCode" Type="Str">{1038A887-23E1-4289-B0BD-0C4B83C6BA21}</Property>
@@ -335,7 +331,7 @@
 				<Property Name="DistPart[0].SoftDep[1].productName" Type="Str">NI Deployment Framework 2023 (64-bit)</Property>
 				<Property Name="DistPart[0].SoftDep[1].upgradeCode" Type="Str">{E0D3C7F9-4512-438F-8123-E2050457972B}</Property>
 				<Property Name="DistPart[0].SoftDep[10].exclude" Type="Bool">false</Property>
-				<Property Name="DistPart[0].SoftDep[10].productName" Type="Str">NI TDM Streaming 23.1</Property>
+				<Property Name="DistPart[0].SoftDep[10].productName" Type="Str">NI TDM Streaming 23.3</Property>
 				<Property Name="DistPart[0].SoftDep[10].upgradeCode" Type="Str">{4CD11BE6-6BB7-4082-8A27-C13771BC309B}</Property>
 				<Property Name="DistPart[0].SoftDep[2].exclude" Type="Bool">false</Property>
 				<Property Name="DistPart[0].SoftDep[2].productName" Type="Str">NI Error Reporting 2020 (64-bit)</Property>
@@ -344,13 +340,13 @@
 				<Property Name="DistPart[0].SoftDep[3].productName" Type="Str">NI LabVIEW Real-Time NBFifo 2023</Property>
 				<Property Name="DistPart[0].SoftDep[3].upgradeCode" Type="Str">{0270E5BD-6304-3B50-B4C4-A575BC480F4F}</Property>
 				<Property Name="DistPart[0].SoftDep[4].exclude" Type="Bool">false</Property>
-				<Property Name="DistPart[0].SoftDep[4].productName" Type="Str">NI Logos 23.1</Property>
+				<Property Name="DistPart[0].SoftDep[4].productName" Type="Str">NI Logos 23.3</Property>
 				<Property Name="DistPart[0].SoftDep[4].upgradeCode" Type="Str">{5E4A4CE3-4D06-11D4-8B22-006008C16337}</Property>
 				<Property Name="DistPart[0].SoftDep[5].exclude" Type="Bool">false</Property>
 				<Property Name="DistPart[0].SoftDep[5].productName" Type="Str">NI LabVIEW Web Server 2023 (64-bit)</Property>
 				<Property Name="DistPart[0].SoftDep[5].upgradeCode" Type="Str">{5F449D4C-83B9-492E-986B-6B85A29C431D}</Property>
 				<Property Name="DistPart[0].SoftDep[6].exclude" Type="Bool">false</Property>
-				<Property Name="DistPart[0].SoftDep[6].productName" Type="Str">NI mDNS Responder 23.0</Property>
+				<Property Name="DistPart[0].SoftDep[6].productName" Type="Str">NI mDNS Responder 23.5</Property>
 				<Property Name="DistPart[0].SoftDep[6].upgradeCode" Type="Str">{9607874B-4BB3-42CB-B450-A2F5EF60BA3B}</Property>
 				<Property Name="DistPart[0].SoftDep[7].exclude" Type="Bool">false</Property>
 				<Property Name="DistPart[0].SoftDep[7].productName" Type="Str">Math Kernel Libraries 2017</Property>
@@ -372,9 +368,9 @@
 				<Property Name="INST_defaultDir" Type="Str">{B9BC1E67-0CA5-4223-A675-215424C1F2D6}</Property>
 				<Property Name="INST_installerName" Type="Str">installHoloTracker.exe</Property>
 				<Property Name="INST_productName" Type="Str">HoloTracker</Property>
-				<Property Name="INST_productVersion" Type="Str">1.0.11</Property>
+				<Property Name="INST_productVersion" Type="Str">1.0.12</Property>
 				<Property Name="InstSpecBitness" Type="Str">64-bit</Property>
-				<Property Name="InstSpecVersion" Type="Str">23108276</Property>
+				<Property Name="InstSpecVersion" Type="Str">23328002</Property>
 				<Property Name="MSI_arpCompany" Type="Str">LEMTA Université de Lorraine</Property>
 				<Property Name="MSI_autoselectDrivers" Type="Bool">true</Property>
 				<Property Name="MSI_distID" Type="Str">{919827CA-27D9-4927-A981-5AD2138F6FB2}</Property>
