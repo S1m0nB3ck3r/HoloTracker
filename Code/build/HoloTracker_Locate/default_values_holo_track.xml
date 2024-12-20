@@ -15,7 +15,7 @@ path</Name>
 </Path>
 <Path>
 <Name>HoloDir</Name>
-<Val>D:\MANIP_holo\simu_holo_bact\2024_07_16_11_51_12\holograms</Val>
+<Val>C:\TRAVAIL\developpement\imagesHolo\holo_BACT_01_07_2020\SimonBactos</Val>
 </Path>
 <Cluster>
 <Name>HoloParam</Name>
@@ -47,7 +47,7 @@ path</Name>
 </Cluster>
 <Boolean>
 <Name>Remove mean Hologram</Name>
-<Val>0</Val>
+<Val>1</Val>
 </Boolean>
 <Cluster>
 <Name>propagation</Name>
@@ -58,11 +58,11 @@ path</Name>
 </DBL>
 <I32>
 <Name>number of planes</Name>
-<Val>100</Val>
+<Val>200</Val>
 </I32>
 <DBL>
 <Name>step</Name>
-<Val>1.00000000000000E-6</Val>
+<Val>5.00000000000000E-7</Val>
 </DBL>
 </Cluster>
 <Cluster>
@@ -70,11 +70,11 @@ path</Name>
 <NumElts>2</NumElts>
 <DBL>
 <Name>High pass (0=none)</Name>
-<Val>0.00000000000000</Val>
+<Val>15.00000000000000</Val>
 </DBL>
 <DBL>
 <Name>Low Pass (0=none)</Name>
-<Val>0.00000000000000</Val>
+<Val>125.00000000000000</Val>
 </DBL>
 </Cluster>
 <Cluster>
@@ -86,7 +86,7 @@ path</Name>
 <Choice>SUM_OF_LAPLACIAN</Choice>
 <Choice>SUM_OF_VARIANCE</Choice>
 <Choice>TENENGRAD</Choice>
-<Val>2</Val>
+<Val>3</Val>
 </EW>
 <I32>
 <Name>Sum size</Name>
@@ -104,7 +104,7 @@ path</Name>
 <NumElts>4</NumElts>
 <DBL>
 <Name>Threshold ( N x Standard deviation)</Name>
-<Val>19.00000000000000</Val>
+<Val>8.00000000000000</Val>
 </DBL>
 <EW>
 <Name>Connectivity</Name>
@@ -115,7 +115,7 @@ path</Name>
 </EW>
 <DBL>
 <Name>min voxel</Name>
-<Val>3.00000000000000</Val>
+<Val>1.00000000000000</Val>
 </DBL>
 <DBL>
 <Name>max voxel</Name>

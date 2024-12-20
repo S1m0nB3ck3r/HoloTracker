@@ -1,0 +1,126 @@
+<?xml version='1.0' standalone='yes' ?>
+<LVData xmlns="http://www.ni.com/LVData">
+<Version>23.3.2f2</Version>
+<Cluster>
+<Name>ParamIN</Name>
+<NumElts>10</NumElts>
+<String>
+<Name>PythonVer</Name>
+<Val>3.10</Val>
+</String>
+<Path>
+<Name>Python/Environnement
+path</Name>
+<Val></Val>
+</Path>
+<Path>
+<Name>HoloDir</Name>
+<Val></Val>
+</Path>
+<Cluster>
+<Name>HoloParam</Name>
+<NumElts>6</NumElts>
+<SGL>
+<Name>wavelength</Name>
+<Val>6.60000E-7</Val>
+</SGL>
+<SGL>
+<Name>optical index</Name>
+<Val>1.33000</Val>
+</SGL>
+<I32>
+<Name>Holo size X</Name>
+<Val>1024</Val>
+</I32>
+<I32>
+<Name>Holo size Y</Name>
+<Val>1024</Val>
+</I32>
+<SGL>
+<Name>pixel size</Name>
+<Val>7.00000E-6</Val>
+</SGL>
+<SGL>
+<Name>objective magnification</Name>
+<Val>40.00000</Val>
+</SGL>
+</Cluster>
+<Boolean>
+<Name>Remove mean Hologram</Name>
+<Val>1</Val>
+</Boolean>
+<Cluster>
+<Name>propagation</Name>
+<NumElts>3</NumElts>
+<DBL>
+<Name>distance ini</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+<I32>
+<Name>number of planes</Name>
+<Val>100</Val>
+</I32>
+<DBL>
+<Name>step</Name>
+<Val>1.00000000000000E-6</Val>
+</DBL>
+</Cluster>
+<Cluster>
+<Name>Fourier BP filter (pix)</Name>
+<NumElts>2</NumElts>
+<DBL>
+<Name>High pass (0=none)</Name>
+<Val>15.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>Low Pass (0=none)</Name>
+<Val>125.00000000000000</Val>
+</DBL>
+</Cluster>
+<Cluster>
+<Name>Focus</Name>
+<NumElts>2</NumElts>
+<EW>
+<Name>Type</Name>
+<Choice>SUM_OF_INTENSITY</Choice>
+<Choice>SUM_OF_LAPLACIAN</Choice>
+<Choice>SUM_OF_VARIANCE</Choice>
+<Choice>TENENGRAD</Choice>
+<Val>2</Val>
+</EW>
+<I32>
+<Name>Sum size</Name>
+<Val>15</Val>
+</I32>
+</Cluster>
+<EW>
+<Name>Batch thresold </Name>
+<Choice>compute on 1st hologram</Choice>
+<Choice>compute on each hologram</Choice>
+<Val>1</Val>
+</EW>
+<Cluster>
+<Name>CCL parameters</Name>
+<NumElts>4</NumElts>
+<DBL>
+<Name>Threshold ( N x Standard deviation)</Name>
+<Val>10.00000000000000</Val>
+</DBL>
+<EW>
+<Name>Connectivity</Name>
+<Choice>6</Choice>
+<Choice>18</Choice>
+<Choice>26</Choice>
+<Val>2</Val>
+</EW>
+<DBL>
+<Name>min voxel</Name>
+<Val>3.00000000000000</Val>
+</DBL>
+<DBL>
+<Name>max voxel</Name>
+<Val>0.00000000000000</Val>
+</DBL>
+</Cluster>
+</Cluster>
+</LVData>
