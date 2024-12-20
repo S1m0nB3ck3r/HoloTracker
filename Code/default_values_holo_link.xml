@@ -15,7 +15,7 @@ path</Name>
 </Path>
 <Path>
 <Name>HoloPath</Name>
-<Val>C:\TRAVAIL\developpement\imagesHolo\1000im_manip3\HOLO_2023_06_28_11_56_10.csv</Val>
+<Val>C:\TRAVAIL\developpement\imagesHolo\holo_BACT_01_07_2020\SimonBactos\HOLO_2024_07_24_14_33_51.csv</Val>
 </Path>
 <I32>
 <Name>memory</Name>
@@ -23,22 +23,22 @@ path</Name>
 </I32>
 <I32>
 <Name>min length</Name>
-<Val>300</Val>
+<Val>100</Val>
 </I32>
 <Cluster>
 <Name>searchRange</Name>
 <NumElts>3</NumElts>
 <DBL>
 <Name>x_range(m)</Name>
-<Val>1.00000000000000E-4</Val>
+<Val>5.00000000000000E-6</Val>
 </DBL>
 <DBL>
 <Name>y_range(m)</Name>
-<Val>1.00000000000000E-4</Val>
+<Val>5.00000000000000E-6</Val>
 </DBL>
 <DBL>
 <Name>z__range(m)</Name>
-<Val>1.00000000000000E-5</Val>
+<Val>5.00000000000000E-6</Val>
 </DBL>
 </Cluster>
 </Cluster>

@@ -1,4 +1,33 @@
 # -*- coding: utf-8 -*-
+
+"""
+Filename: focus.py
+
+Description:
+Groups of functions needed for treat 3d holograms with a focus criterion to make appear objects of interest.
+Author: Simon BECKER
+Date: 2024-07-09
+
+License:
+GNU General Public License v3.0
+
+Copyright (C) [2024] Simon BECKER
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program. If not, see <https://www.gnu.org/licenses/>.
+"""
+
+
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 import math
@@ -106,12 +135,15 @@ def focus_TENEGRAD(d_volume_IN, d_focus_OUT, sumSize):
             cp_ndimage.convolve(plane_module, ten1, output = plane_ten1, mode = 'reflect')
             cp_ndimage.convolve(plane_module, ten2, output = plane_ten2, mode = 'reflect')
             plane_tenegard = cp.sqrt(plane_ten1**2 + plane_ten2**2)
+            # plane_tenegard = plane_ten1**2 + plane_ten2**2
+
             cp_ndimage.convolve(plane_tenegard, convolve_plane,  output = d_focus_OUT[p,:,:], mode = 'reflect')
     else : # module float32
         for p in range(sizeZ):
             cp_ndimage.convolve(d_volume_IN[p,:,:], ten1, output = plane_ten1, mode = 'reflect')
             cp_ndimage.convolve(d_volume_IN[p,:,:], ten2, output = plane_ten2, mode = 'reflect')
             plane_tenegard = cp.sqrt(plane_ten1**2 + plane_ten2**2)
+            # plane_tenegard = plane_ten1**2 + plane_ten2**2
             cp_ndimage.convolve(plane_tenegard, convolve_plane,  output = d_focus_OUT[p,:,:], mode = 'reflect')
 
 

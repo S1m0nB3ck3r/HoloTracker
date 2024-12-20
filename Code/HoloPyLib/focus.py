@@ -135,12 +135,15 @@ def focus_TENEGRAD(d_volume_IN, d_focus_OUT, sumSize):
             cp_ndimage.convolve(plane_module, ten1, output = plane_ten1, mode = 'reflect')
             cp_ndimage.convolve(plane_module, ten2, output = plane_ten2, mode = 'reflect')
             plane_tenegard = cp.sqrt(plane_ten1**2 + plane_ten2**2)
+            # plane_tenegard = plane_ten1**2 + plane_ten2**2
+
             cp_ndimage.convolve(plane_tenegard, convolve_plane,  output = d_focus_OUT[p,:,:], mode = 'reflect')
     else : # module float32
         for p in range(sizeZ):
             cp_ndimage.convolve(d_volume_IN[p,:,:], ten1, output = plane_ten1, mode = 'reflect')
             cp_ndimage.convolve(d_volume_IN[p,:,:], ten2, output = plane_ten2, mode = 'reflect')
             plane_tenegard = cp.sqrt(plane_ten1**2 + plane_ten2**2)
+            # plane_tenegard = plane_ten1**2 + plane_ten2**2
             cp_ndimage.convolve(plane_tenegard, convolve_plane,  output = d_focus_OUT[p,:,:], mode = 'reflect')
 
 

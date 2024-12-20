@@ -412,15 +412,16 @@ def LV_find_features(threshold, image_number = 0):
     else :
         connectivity = 26
 
-    h_labels, number_of_labels, statsCCL3D = CCL3D(d_bin_volume_focus, d_volume_module, type_threshold.THRESHOLD, threshold, connectivity)
-    h_bin = cp.asnumpy(d_bin_volume_focus)
+    d_labels, number_of_labels = CCL3D(d_bin_volume_focus, d_volume_module, type_threshold.THRESHOLD, threshold, connectivity)
 
     #CCA(h_labels, h_focus_volume, features, i_image, dx, dy , dz)
-    features_np = CCA_CUDA_float(h_labels, d_volume_module, number_of_labels, image_number, image_size_X, image_size_Y, nb_plane, dx, dy, dz)
+    features_np = CCA_CUDA_float(d_labels, d_volume_module, number_of_labels, image_number, image_size_X, image_size_Y, nb_plane, dx, dy, dz)
 
-    features_filtered = CCL_filter(features_np, min_voxel, max_voxel)
-
-    return features_filtered
+    if (min_voxel != 0 or min_voxel != 1) and max_voxel != 0 :
+        features_filtered = CCL_filter(features_np, min_voxel, max_voxel)
+        return features_filtered
+    else :
+        return features_np
 
     # #changement de repere
     # features_np_2 = np.ndarray(shape = (number_of_labels,5), dtype = np.float32)

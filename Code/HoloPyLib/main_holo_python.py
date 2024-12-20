@@ -46,6 +46,7 @@ import pyximport; pyximport.install()
 #from cupyx.scipy.fft import ifftn as icpxfftn
 
 
+
 from cupy.fft import rfft2, fft2, ifft2, fftshift, ifftshift, fftn, ifftn
 
 from typeHolo import *
@@ -55,8 +56,12 @@ import matplotlib.pyplot as plt
 import trackpy as tp
 import trackpy.diag as dg
 
+
+
+
+
 # repertoire courant
-path = r'D:\\MANIP_holo\\500im_manip1'
+path = r'.\\Images test'
 result_filename = 'result_python_sum15_TENEGRAD_STD15_each.csv'
 type_image = 'bmp'
 
@@ -156,20 +161,23 @@ for image in os.listdir(path):
 
         sizeMeanZ = 5
 
-        h_labels, number_of_labels, statsCCL3D = CCL3D(d_bin_volume_focus, d_volume_module, typeThreshold, threshold, n_connectivity, filter_size)
-        print(h_labels.dtype)
-        h_bin = cp.asnumpy(d_bin_volume_focus)
+        t_s = time.perf_counter()
+        d_labels, number_of_labels = CCL3D(d_bin_volume_focus, d_volume_module, typeThreshold, threshold, n_connectivity)
+        t_f = time.perf_counter()
+        print('nombre d\'objet trouvés: ', number_of_labels)
+        print('t new_ccl : ', t_f - t_s)
+
+
         #print("nb pix: ", d_bin_volume_focus.sum())
         t4 = time.perf_counter()
-
 
         #analyse des labels
         features = np.ndarray(shape = (number_of_labels,), dtype = dobjet)
         print('nombre d\'objet trouvés: ', number_of_labels)
 
-        features = CCA_CUDA_float(h_labels, d_volume_module, number_of_labels, i_image, sizeX, sizeY, nb_plan, dx, dy, dz)
+        features = CCA_CUDA_float(d_labels, d_volume_module, number_of_labels, i_image, sizeX, sizeY, nb_plan, dx, dy, dz)
 
-        features_filtered = CCL_filter(features, 1, 0)
+        # features_filtered = CCL_filter(features, 1, 0)
 
         end_CCL_CCA_time = time.perf_counter()
 
@@ -191,21 +199,21 @@ for image in os.listdir(path):
         print('temps traitement: ', final_time - ini_time)
 
 
-        h_intensite = cp.asnumpy(d_volume_module**2).reshape((sizeX * sizeY * nb_plan, ))
-        plt.hist(h_intensite, bins = 1000)
-        plt.axis()
-        plt.yscale('log')
-        plt.show()
+        # h_intensite = cp.asnumpy(d_volume_module**2).reshape((sizeX * sizeY * nb_plan, ))
+        # plt.hist(h_intensite, bins = 1000)
+        # plt.axis()
+        # plt.yscale('log')
+        # plt.show()
 
-        #affichage 3D
-        fig = plt.figure()
-        ax = plt.axes(projection='3d')
-        Z = positions['baryZ']
-        Y = positions['baryY']
-        X = positions['baryX']
-        ax.scatter3D(X, Y, Z)
+        # #affichage 3D
+        # fig = plt.figure()
+        # ax = plt.axes(projection='3d')
+        # Z = positions['baryZ']
+        # Y = positions['baryY']
+        # X = positions['baryX']
+        # ax.scatter3D(X, Y, Z)
 
-        plt.show()
+        # plt.show()
 
 
         
