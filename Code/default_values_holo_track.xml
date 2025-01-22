@@ -15,7 +15,7 @@ path</Name>
 </Path>
 <Path>
 <Name>HoloDir</Name>
-<Val>C:\Users\becker14\Documents\presentations\CFTL 2024\Holographi\SimonBactos</Val>
+<Val>C:\TRAVAIL\developpement\imagesHolo\1000im_manip3</Val>
 </Path>
 <Cluster>
 <Name>HoloParam</Name>
@@ -104,7 +104,7 @@ path</Name>
 <NumElts>4</NumElts>
 <DBL>
 <Name>Threshold ( N x Standard deviation)</Name>
-<Val>12.00000000000000</Val>
+<Val>10.00000000000000</Val>
 </DBL>
 <EW>
 <Name>Connectivity</Name>

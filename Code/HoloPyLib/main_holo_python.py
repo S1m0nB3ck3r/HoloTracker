@@ -56,12 +56,8 @@ import matplotlib.pyplot as plt
 import trackpy as tp
 import trackpy.diag as dg
 
-
-
-
-
 # repertoire courant
-path = r'.\\Images test'
+path = r'C:\TRAVAIL\RepositoriesGithub\HoloTracker\Images_test_2'
 result_filename = 'result_python_sum15_TENEGRAD_STD15_each.csv'
 type_image = 'bmp'
 
@@ -71,7 +67,7 @@ infoHolo = info_Holo()
 infoHolo.lambdaMilieu = 660e-9 / 1.33
 infoHolo.magnification = 40.0
 infoHolo.nb_pix_X = 1024
-infoHolo.nb_pix_Y = 1024
+infoHolo.nb_pix_Y = 512
 infoHolo.pixSize = 7e-6
 
 sizeX = infoHolo.nb_pix_X
