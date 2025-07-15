@@ -72,12 +72,4 @@ class objet:
         baryX:% s,baryY:% s,baryZ:% s\n"""%(self.nb_pix, self.label, self.pSum, self.pxSumX, self.pxSumY, self.pxSumZ, self.xMin, self.xMax, self.yMin, \
         self.yMax, self.zMin, self.zMax, self.baryX, self.baryY, self.baryZ)
 
-""" monObj = objet(10, 5, 2)
-monObj.baryY = 52
-print(monObj)
-maListObj = []
-maListObj.append(monObj)
-maListObj.append(monObj)
 
-for obj in maListObj:
-    print(obj) """

@@ -253,8 +253,6 @@ def LV_get_all_image_in_directory(dirPath, extension):
 
     return list(filter(lambda image: image.split('.')[-1].lower() == extension.lower(), files))
     
-
-
 def LV_volume_propagation():
 
     global wavelenght 

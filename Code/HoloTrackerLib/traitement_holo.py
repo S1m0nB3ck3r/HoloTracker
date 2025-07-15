@@ -3,9 +3,7 @@ import os
 from PIL import Image
 import numpy as np
 import cupy as cp
-import time
 import math
-import cc3d
 from cupyx import jit
 import cupy as cp
 from cupy.fft import rfft2, fft2, ifft2, fftshift, ifftshift, fftn, ifftn
@@ -33,7 +31,7 @@ def read_image(path_image, sizeX = 0, sizeY = 0):
         return(h_holo)
 
 
-def affichage(plan):
+def display(plan):
 
     if isinstance(plan, cp.ndarray):
         h_plan = cp.asnumpy(plan)

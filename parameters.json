@@ -1,0 +1,19 @@
+{
+    "display_images": false,
+    "holo_directory": "Images_test",
+    "result_filename": "result_.csv",
+    "image_type": "bmp",
+    "wavelength": 6.6e-07,
+    "medium_index": 1.33,
+    "cam_magnification": 40.0,
+    "cam_nb_pix_X": 1024,
+    "cam_nb_pix_Y": 1024,
+    "nb_plane": 200,
+    "cam_pix_size": 5.5e-06,
+    "plane_step": 5e-07,
+    "focus_smooth_size": 15,
+    "threshold_value": 10,
+    "type_Threshold": "NB_STDVAR",
+    "n_connectivity": 26,
+    "particle_filter_size": 0
+}

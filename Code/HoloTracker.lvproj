@@ -167,7 +167,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToCommon</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{37962870-B846-4A58-B4F6-207E2FD2E681}</Property>
-				<Property Name="Bld_version.build" Type="Int">21</Property>
+				<Property Name="Bld_version.build" Type="Int">22</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">HoloTracker_Link.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../build/Holo_Tracker_Link/HoloTracker_Link.exe</Property>
@@ -249,7 +249,7 @@
 				<Property Name="Bld_localDestDirType" Type="Str">relativeToProject</Property>
 				<Property Name="Bld_modifyLibraryFile" Type="Bool">true</Property>
 				<Property Name="Bld_previewCacheID" Type="Str">{D920B73B-F4AC-47EA-8DE0-671A5F4F9AAA}</Property>
-				<Property Name="Bld_version.build" Type="Int">20</Property>
+				<Property Name="Bld_version.build" Type="Int">21</Property>
 				<Property Name="Bld_version.major" Type="Int">1</Property>
 				<Property Name="Destination[0].destName" Type="Str">HoloTracker_Locate.exe</Property>
 				<Property Name="Destination[0].path" Type="Path">../build/HoloTracker_Locate/HoloTracker_Locate.exe</Property>
@@ -260,7 +260,7 @@
 				<Property Name="Destination[1].path" Type="Path">../build/HoloTracker_Locate/Data</Property>
 				<Property Name="Destination[1].path.type" Type="Str">relativeToProject</Property>
 				<Property Name="DestinationCount" Type="Int">2</Property>
-				<Property Name="Source[0].itemID" Type="Str">{8F9E90C8-C558-44C0-AD5B-0B905C8BF057}</Property>
+				<Property Name="Source[0].itemID" Type="Str">{282E0102-153A-46F6-AB17-C5ABF6DD42A4}</Property>
 				<Property Name="Source[0].type" Type="Str">Container</Property>
 				<Property Name="Source[1].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[1].itemID" Type="Ref">/My Computer/main_locate.vi</Property>
@@ -294,7 +294,6 @@
 				<Property Name="Source[6].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[7].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[7].itemID" Type="Ref">/My Computer/codePython/typeHolo.py</Property>
-				<Property Name="Source[7].sourceInclusion" Type="Str">Include</Property>
 				<Property Name="Source[8].destinationIndex" Type="Int">0</Property>
 				<Property Name="Source[8].itemID" Type="Ref">/My Computer/codePython/HoloTracker_link_labview_wrapper.py</Property>
 				<Property Name="Source[8].sourceInclusion" Type="Str">Include</Property>
@@ -368,7 +367,7 @@
 				<Property Name="INST_defaultDir" Type="Str">{B9BC1E67-0CA5-4223-A675-215424C1F2D6}</Property>
 				<Property Name="INST_installerName" Type="Str">installHoloTracker.exe</Property>
 				<Property Name="INST_productName" Type="Str">HoloTracker</Property>
-				<Property Name="INST_productVersion" Type="Str">1.0.15</Property>
+				<Property Name="INST_productVersion" Type="Str">1.0.16</Property>
 				<Property Name="InstSpecBitness" Type="Str">64-bit</Property>
 				<Property Name="InstSpecVersion" Type="Str">23108276</Property>
 				<Property Name="MSI_arpCompany" Type="Str">LEMTA Université de Lorraine</Property>

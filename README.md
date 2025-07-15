@@ -5,12 +5,13 @@ HoloTracker is an in-line hologram analysis software (developed in Python/Labvie
 
 HoloTracker features a user-friendly human-machine interface for simplified usage.
 
-HoloTracker requires an Nvidia GPU and utilizes the Cupy library for hologram backpropagation. For determining the centroids of segmented objects, HoloTracker uses the Python library connected-components-3d developed by willsilversmith (https://pypi.org/user/willsilversmith/). For tracking objects once they are localized, HoloTracker utilizes the TrackPy library (soft-matter.github.io/trackpy/).
+HoloTracker requires an Nvidia GPU and utilizes the Cupy library for hologram backpropagation. For tracking objects once they are localized, HoloTracker utilizes the TrackPy library (soft-matter.github.io/trackpy/).
+
+For testing HoloTracker_Locate without GUI, a script is located at \Code\HoloPyLib\test_HoloTracker_locate.py
 
 Here are the python library/package needed to use HoloTracker.
 
 cupy-cuda11x            12.2.0  
-connected-components-3d 3.10.3  
 Cython                  0.29.33  
 matplotlib              3.8.0  
 numba                   0.56.4  

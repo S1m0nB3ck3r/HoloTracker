@@ -15,7 +15,7 @@ path</Name>
 </Path>
 <Path>
 <Name>HoloDir</Name>
-<Val>C:\TRAVAIL\developpement\imagesHolo\1000im_manip3</Val>
+<Val>C:\TRAVAIL\RepositoriesGithub\HoloTracker\Images_test</Val>
 </Path>
 <Cluster>
 <Name>HoloParam</Name>
@@ -58,11 +58,11 @@ path</Name>
 </DBL>
 <I32>
 <Name>number of planes</Name>
-<Val>100</Val>
+<Val>200</Val>
 </I32>
 <DBL>
 <Name>step</Name>
-<Val>1.00000000000000E-6</Val>
+<Val>5.00000000000000E-7</Val>
 </DBL>
 </Cluster>
 <Cluster>
@@ -90,7 +90,7 @@ path</Name>
 </EW>
 <I32>
 <Name>Sum size</Name>
-<Val>11</Val>
+<Val>15</Val>
 </I32>
 </Cluster>
 <EW>
@@ -104,7 +104,7 @@ path</Name>
 <NumElts>4</NumElts>
 <DBL>
 <Name>Threshold ( N x Standard deviation)</Name>
-<Val>10.00000000000000</Val>
+<Val>9.00000000000000</Val>
 </DBL>
 <EW>
 <Name>Connectivity</Name>
@@ -115,7 +115,7 @@ path</Name>
 </EW>
 <DBL>
 <Name>min voxel</Name>
-<Val>10.00000000000000</Val>
+<Val>100.00000000000000</Val>
 </DBL>
 <DBL>
 <Name>max voxel</Name>

@@ -4,9 +4,9 @@
 Filename: CCL3D.py
 
 Description:
-Groups of functions needed for calling and adapting the cc3d library (https://pypi.org/project/connected-components-3d/) to hologram analysis purpose.
+Connected component labelling and label analysis using cupyx.scipy
 Author: Simon BECKER
-Date: 2024-07-09
+Date: 2025-07-11
 
 License:
 GNU General Public License v3.0
@@ -28,8 +28,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 """
 
 import cupy as cp
-from typeHolo import *
-import cc3d
+# from typeHolo import *
 import numpy as np
 from cupyx import jit
 from cupyx.scipy import ndimage as cp_ndimage
@@ -166,179 +165,6 @@ def div_by_mean_convolution(d_focus_volume, d_focus_volume_2, sizeMeanXY, sizeMe
 
     #convolution du plan avec convolve_volume
     cp_ndimage.convolve(input = d_focus_volume_2, output = d_focus_volume, weights = convolve_volume, mode = 'reflect')
-
-
-
-# @jit.rawkernel()
-# def device_init_labels(d_label_volume, d_bin_volume, connectivity, sizeX, sizeY, sizeZ):
-
-#     conectivity_6 = [[-1,0,0],[0,-1,0],[0,0,-1]]
-
-#     conectivity_14 = [[-1,0,0],[0,-1,0],[-1,-1,0],[0,0,-1],[-1,0,-1],[0,-1,-1]]
-
-#     conectivity_26 = [[-1,0,0],[0,-1,0],[-1,-1,0],[0,0,-1],[-1,0,-1],[0,-1,-1],[-1,-1,-1]]
-
-#     index = jit.blockIdx.x * jit.blockDim.x + jit.threadIdx.x
-#     planSize = sizeX * sizeY
-#     kk = index // planSize
-#     jj = ( index - kk * planSize )// sizeX
-#     ii = index - jj * sizeX - kk * planSize
-
-#     if (ii < sizeX and jj < sizeY and kk < sizeZ):
-
-#         bin_ijk = d_bin_volume[kk, jj, ii]
-
-#         # Neighbour Connections
-#         #a = condition ? value_if_true : value_if_false
-#         nzm1yx  = bin_ijk == d_bin_volume[conectivity_6[0]] if (kk > 0) else False
-#         nzym1x  = bin_ijk == d_bin_volume[conectivity_6[1]] if (jj > 0) else False
-#         nzyxm1  = bin_ijk == d_bin_volume[conectivity_6[2]] if (ii > 0) else False
-
-# 		#Label
-#         label = 0
-
-# 		# Initialise Label
-#         label = kk * planSize + jj * sizeX + ii - 1 if nzm1yx else kk * planSize + jj * sizeX + ii
-#         label = kk * planSize + (jj-1) * sizeX + ii if nzym1x else label
-#         label = (kk-1) * planSize + jj * sizeX + ii if nzyxm1 else label
-        
-#         d_label_volume[kk, jj, ii] = label
-
-#     return()
-
-# def CCL3D_initialise(d_label_volume, d_bin_volume, connectivity):
-
-#     sizeZ, sizeY, sizeX = d_bin_volume.shape
-#     n_threads = 1024
-#     n_blocks = (sizeX * sizeY * sizeZ)//1024 +1
-
-#     device_init_labels[n_blocks, n_threads](d_label_volume, d_bin_volume, connectivity, sizeX, sizeY, sizeZ)
-
-#     return()
-
-# @jit.rawkernel()
-# def device_resolve_labels(d_label_volume, sizeX, sizeY, sizeZ):
-
-#     #calculate index
-#     index = jit.blockIdx.x * jit.blockDim.x + jit.threadIdx.x
-#     nbpix = sizeX * sizeY * sizeZ
-
-#     label = d_label_volume[index]
-
-#     if index < nbpix:
-#         #find root
-#         #d_labels_volume[ijk] = find_root(d_labels_volume, d_labels_volume[ijk]);
-#         next = d_label_volume[label]
-
-#         while(label != next):
-#             # move to next
-#             label = next
-#             next = d_label_volume[label]
-
-#     d_label_volume[index] = label
-
-#     return()
-
-# def CCL3D_resolve_label(d_label_volume, sizeX, sizeY, sizeZ):
-
-#     n_threads = 1024
-#     n_blocks = (sizeX * sizeY * sizeZ)//1024 +1
-
-#     device_resolve_labels[n_blocks, n_threads](d_label_volume, sizeX, sizeY, sizeZ)
-
-#     return()
-
-# @jit.rawkernel()
-# def device_label_equivalence(d_label_volume, d_bin_volume, d_changed, sizeX, sizeY, sizeZ):
-#     #calculate index
-#     index = jit.blockIdx.x * jit.blockDim.x + jit.threadIdx.x
-#     plan_size = sizeX * sizeY
-#     nb_pix = plan_size * sizeZ
-
-#     if index > nb_pix:
-#         return()
-    
-#     kk = index // plan_size
-#     jj = ( index - kk * plan_size )// sizeX
-#     ii = index - jj * sizeX - kk * plan_size
-
-#     #check range
-#     if (ii < sizeX and jj < sizeY and kk < sizeZ):
-#         bin_ijk = d_bin_volume[kk, jj, ii]
-
-#         #get neighbour labels
-#         label_zm1_y_x = d_label_volume[kk -1, jj, ii] if kk > 0 else 0
-#         label_z_ym1_x = d_label_volume[kk, jj -1, ii] if jj > 0 else 0
-#         label_z_y_xm1 = d_label_volume[kk, jj, ii -1] if ii > 0 else 0
-
-#         label_z_y_x = d_label_volume[kk, jj, ii]
-
-#         label_zp1_y_x = d_label_volume[kk + 1, jj, ii] if kk < sizeZ else 0
-#         label_z_yp1_x = d_label_volume[kk, jj + 1, ii] if jj < sizeY else 0
-#         label_z_y_xp1 = d_label_volume[kk, jj, ii + 1] if ii < sizeX else 0
-
-#         #get neighbour values
-#         val_zm1_y_x = bin_ijk == d_bin_volume[kk - 1, jj, ii] if kk > 0 else False
-#         val_z_ym1_x = bin_ijk == d_bin_volume[kk, jj - 1, ii] if jj > 0 else False
-#         val_z_y_xm1 = bin_ijk == d_bin_volume[kk, jj, ii - 1] if ii > 0 else False
-#         val_zp1_y_x = bin_ijk == d_bin_volume[kk + 1, jj, ii] if kk < sizeZ else False
-#         val_z_yp1_x = bin_ijk == d_bin_volume[kk, jj + 1, ii] if jj < sizeY else False
-#         val_z_y_xp1 = bin_ijk == d_bin_volume[kk, jj, ii + 1] if jj < sizeX else False
-
-
-#         label = label_z_y_x
-#         #finde the lowest neighbouring label
-
-
-#     """
-#             // Find lowest neighbouring label
-#             label = ((nzm1yx) && (lzm1yx < label)) ? lzm1yx : label;
-#             label = ((nzym1x) && (lzym1x < label)) ? lzym1x : label;
-#             label = ((nzyxm1) && (lzyxm1 < label)) ? lzyxm1 : label;
-#             label = ((nzyxp1) && (lzyxp1 < label)) ? lzyxp1 : label;
-#             label = ((nzyp1x) && (lzyp1x < label)) ? lzyp1x : label;
-#             label = ((nzp1yx) && (lzp1yx < label)) ? lzp1yx : label;
-
-
-
-#             // If labels are different, resolve them
-#             if(label < lzyx) {
-#                 // Update label
-#                 // Nonatomic write may overwrite another label but on average seems to give faster results
-#                 d_labels_volume[lzyx] = label;
-
-#                 // Record the change
-#                 changed[0] = true;
-#             }
-#         }
-#     }
-#     """
-#     return()
-
-def OLD_CCL3D(d_bin_volume, d_focus_volume,  t_threshold, threshold, n_connectivity):
-
-    sizeZ, sizeY, sizeX = d_focus_volume.shape
-    n_threads = 1024
-    n_blocks = (sizeX * sizeY * sizeZ)//1024 +1
-    #calcul du seuil
-
-    if t_threshold == type_threshold.NB_STD_DEV :
-        threshold = calc_threshold(d_focus_volume, threshold)
-        cuda_Binaries_Focus_Volume[n_blocks, n_threads](d_bin_volume, d_focus_volume, threshold, sizeX, sizeY, sizeZ)
-    elif t_threshold == type_threshold.THRESHOLD :
-        cuda_Binaries_Focus_Volume[n_blocks, n_threads](d_bin_volume, d_focus_volume, threshold, sizeX, sizeY, sizeZ)
-    else:
-        binaries_Focus_Volume_local_contrast(d_bin_volume, d_focus_volume, threshold, 20, 10)
-
-    nbpix = np.sum(cp.asnumpy(d_bin_volume), keepdims = False)
-    #print('nb TRUE = ', nbpix)
-    #print('percent = ', 100.0 * nbpix / (sizeX * sizeY * sizeZ))
-    
-    h_bin_volume = cp.asnumpy(d_bin_volume)
-
-    labels, number_of_labels = cc3d.connected_components(h_bin_volume, connectivity=n_connectivity, out_dtype=np.uint32, return_N=True)
-
-    return(labels, number_of_labels)
 
 def CCL3D(d_bin_volume, d_focus_volume,  t_threshold, threshold, n_connectivity = 6):
 
