@@ -11,6 +11,7 @@ For testing HoloTracker_Locate without GUI, a script is located at \Code\HoloPyL
 
 Here are the python library/package needed to use HoloTracker.
 
+python                  3.10
 cupy-cuda11x            12.2.0  
 Cython                  0.29.33  
 matplotlib              3.8.0  

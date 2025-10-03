@@ -315,8 +315,3 @@ def normalise_to_U8_volume(d_volume_IN):
     return(((d_volume_IN - min) * 255 / (max - min)).astype(cp.uint8))
 
 
-
-
-
-    
-

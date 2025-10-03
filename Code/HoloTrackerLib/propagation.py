@@ -27,21 +27,13 @@ You should have received a copy of the GNU General Public License
 along with this program. If not, see <https://www.gnu.org/licenses/>.
 """
 
-import matplotlib.pyplot as plt
-import matplotlib.image as mpimg
+
 import math
 import numpy as np
-from numpy.fft import fft2 as np_fft2
-from numpy.fft import ifft2 as np_ifft2
-from numpy.fft import fftshift as np_fftshift
-from numpy.fft import ifftshift as np_ifftshift
-
 import cupy as cp
-from cupy.fft import rfft2, fft2, ifft2, fftshift, ifftshift, fftn, ifftn
+from cupy.fft import  fft2, fftshift
 from cupyx import jit
-from cupyx.scipy import ndimage as cp_ndimage
-import typeHolo
-from traitement_holo import *
+from HoloTrackerLib.traitement_holo import *
 
 
 @jit.rawkernel()

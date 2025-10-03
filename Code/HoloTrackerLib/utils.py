@@ -44,7 +44,7 @@ if __name__ == "__main__":
         'cam_pix_size': 5.5e-6,
         'plane_step': 0.5e-6,
         'focus_smooth_size': 15,
-        'threshold_value': 10,
+        'threshold_value': 12,
         'type_Threshold': 'NB_STDVAR', #or VALUE
         'n_connectivity': 26,
         'particle_filter_size': 0

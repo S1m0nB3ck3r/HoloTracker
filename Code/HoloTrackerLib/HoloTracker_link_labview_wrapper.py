@@ -29,10 +29,7 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 import numpy as np
 import trackpy as tp
-import trackpy.diag as dg
-import numba
 import pandas as pd
-import matplotlib.pyplot as plt
 import os
 
 file_path = ""

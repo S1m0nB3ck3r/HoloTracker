@@ -1,0 +1,9 @@
+[Volume Id]
+DistributionGUID={919827CA-27D9-4927-A981-5AD2138F6FB2}
+DistPackageGUID={72570C63-CD3E-4D05-B8EB-CC9A3A42BB56}
+DistributionVersion=1.0.16
+DistributionType=MDF
+DistributionLanguage=9
+Volume=1
+TotalNumberOfVolumesInDistribution=1
+ExePath=installHoloTracker.exe

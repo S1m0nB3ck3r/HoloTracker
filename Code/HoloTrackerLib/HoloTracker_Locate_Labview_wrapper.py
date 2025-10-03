@@ -29,17 +29,12 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 import cupy as cp
 import numpy as np
-from cupyx import jit
-import time
 import os
-from PIL import Image
 from traitement_holo import *
 import propagation as propag
 import focus 
 from focus import Focus_type
-import typeHolo
 from CCL3D import *
-import pyximport; pyximport.install()
 import pandas as pd
 
 flag_allocated = False
@@ -356,16 +351,6 @@ def LV_get_mean_std_var_volume():
 
     #return(mean.item(), stdVar.item())
     return(mean.item(), stdVar.item())
-
-def test_FFT():
-
-    global d_holo
-    global d_fft_holo
-
-    d_FFT_HOLO = fftshift(fft2(d_holo, norm = 'ortho'))
-    d_holo = cp.flip(cp.flip(fft2(fftshift(d_FFT_HOLO), norm = 'ortho'), axis=1), axis=0)
-
-    return cp.asnumpy(cp.sqrt(cp.real(d_holo)**2 + cp.imag(d_holo)**2))
 
 def get_AND_XY_bin_planes():
     return(cp.asnumpy(cp.clip(d_bin_volume_focus.sum(axis = 0), a_min = 0, a_max = 1)) * 255.0 )

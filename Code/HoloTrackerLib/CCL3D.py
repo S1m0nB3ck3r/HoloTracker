@@ -35,7 +35,7 @@ from cupyx.scipy import ndimage as cp_ndimage
 import numpy as np
 from numba import njit
 import time
-from traitement_holo import *
+from HoloTrackerLib.traitement_holo import *
 from enum import Enum
 
 class type_threshold(Enum):
@@ -468,4 +468,22 @@ def CCL_filter(features_in, nb_vox_min, nb_vox_max):
             features_out = np.append(features_out, feat_temp, axis = 0)
     
     return features_out
+
+
+def calculate_sphericity(voxel_coords):
+    if voxel_coords.shape[0] < 3:
+        return cp.float32(0.0)
+
+    centered_points = voxel_coords - cp.mean(voxel_coords, axis=0)
+    covariance_matrix = cp.cov(centered_points, rowvar=False)
+
+    eigenvalues = cp.linalg.eigvalsh(covariance_matrix)
+    min_moment = cp.min(eigenvalues)
+    max_moment = cp.max(eigenvalues)
+
+    if min_moment == 0:
+        return cp.float32(0.0)
+
+    sphericity = min_moment / max_moment
+    return sphericity
 

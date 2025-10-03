@@ -1,6 +1,6 @@
 <?xml version='1.0' standalone='yes' ?>
 <LVData xmlns="http://www.ni.com/LVData">
-<Version>23.1f276</Version>
+<Version>25.3.2f2</Version>
 <Cluster>
 <Name>ParamIN</Name>
 <NumElts>10</NumElts>
@@ -104,7 +104,7 @@ path</Name>
 <NumElts>4</NumElts>
 <DBL>
 <Name>Threshold ( N x Standard deviation)</Name>
-<Val>9.00000000000000</Val>
+<Val>11.00000000000000</Val>
 </DBL>
 <EW>
 <Name>Connectivity</Name>
@@ -115,7 +115,7 @@ path</Name>
 </EW>
 <DBL>
 <Name>min voxel</Name>
-<Val>100.00000000000000</Val>
+<Val>1.00000000000000</Val>
 </DBL>
 <DBL>
 <Name>max voxel</Name>
