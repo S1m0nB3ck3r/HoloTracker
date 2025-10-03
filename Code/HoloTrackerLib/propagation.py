@@ -33,7 +33,7 @@ import numpy as np
 import cupy as cp
 from cupy.fft import  fft2, fftshift
 from cupyx import jit
-from HoloTrackerLib.traitement_holo import *
+from traitement_holo import *
 
 
 @jit.rawkernel()

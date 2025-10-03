@@ -30,27 +30,17 @@ along with this program. If not, see <https://www.gnu.org/licenses/>.
 
 import cupy as cp
 import numpy as np
-from cupyx import jit
 import time
 import os
 from PIL import Image
-from traitement_holo import *
-import propagation as propag
-import focus as focus
-from focus import Focus_type
-from CCL3D import *
-import pyximport; pyximport.install()
-from cupyx.scipy.fft import fftn as cpxfftn
-from cupyx.scipy.fft import ifftn as icpxfftn
-from cupy.fft import rfft2, fft2, ifft2, fftshift, ifftshift, fftn, ifftn
-from typeHolo import *
+from HoloTrackerLib.traitement_holo import *
+from HoloTrackerLib import propagation as propag
+from HoloTrackerLib import focus as focus
+from HoloTrackerLib.CCL3D import *
+from HoloTrackerLib.typeHolo import *
+from HoloTrackerLib import utils
 import pandas as pd
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
-from matplotlib import cm
-import trackpy as tp
-import trackpy.diag as dg
-import utils as utils
 import cv2
 
 # Parameters

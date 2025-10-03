@@ -6,7 +6,6 @@ import cupy as cp
 import math
 from cupyx import jit
 import cupy as cp
-from cupy.fft import rfft2, fft2, ifft2, fftshift, ifftshift, fftn, ifftn
 
 
 def test_var(var):
