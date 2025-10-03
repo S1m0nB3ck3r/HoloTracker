@@ -293,6 +293,9 @@ def LV_volume_propagation():
         elif focus_type == 3:
             foc = Focus_type.TENEGRAD
             s_foc = "TENENGRAD"
+        elif focus_type == 4:
+            foc = Focus_type.CUSTOM
+            s_foc = "CUSTOM"
 
         propag.volume_propag_angular_spectrum_to_module(d_holo, d_fft_holo, d_KERNEL, d_fft_holo_propag, d_volume_module,
             lamda_medium, magnification, pixel_size, image_size_X, image_size_Y, distance_ini, propag_step, nb_plane, int(high_pass_filter),int(low_pass_filter))

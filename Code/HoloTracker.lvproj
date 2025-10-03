@@ -29,6 +29,7 @@
 			<Item Name="referencesLINKBtns.ctl" Type="VI" URL="../subVis/referencesLINKBtns.ctl"/>
 			<Item Name="setScatterColor.vi" Type="VI" URL="../subVis/setScatterColor.vi"/>
 		</Item>
+		<Item Name="all_treatment_parameters.ctl" Type="VI" URL="../subVis/all_treatment_parameters.ctl"/>
 		<Item Name="holoTracker.lvlib" Type="Library" URL="../HoloTrackerLib/holoTracker.lvlib"/>
 		<Item Name="HoloTracker_link_labview_wrapper.py" Type="Document" URL="../HoloTrackerLib/HoloTracker_link_labview_wrapper.py"/>
 		<Item Name="HoloTracker_Locate_Labview_wrapper.py" Type="Document" URL="../HoloTrackerLib/HoloTracker_Locate_Labview_wrapper.py"/>

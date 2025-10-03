@@ -39,6 +39,7 @@ class Focus_type(Enum):
     SUM_OF_VARIANCE = 3
     TENEGRAD = 4
     SUM_OF_INTENSITY = 5
+    CUSTOM = 6
 
 
 def focus_sum_square_of_laplacien(d_volume_IN, d_focus_OUT, sumSize):
@@ -157,6 +158,28 @@ def focus_SUM_OF_INTENSITY(d_volume_IN, d_focus_OUT, sumSize):
             plane = d_volume_IN[p,:,:]**2
             cp_ndimage.convolve(plane, convolve_plane, output = d_focus_OUT[p,:,:], mode = 'reflect')
 
+def focus_CUSTOM(d_volume_IN, d_focus_OUT, sumSize):
+    #write here your custom focus function
+
+    sizeZ, sizeY, sizeX  = cp.shape(d_volume_IN)
+
+    #allocation intensity plane
+    plane = cp.zeros(shape = (sizeY, sizeX), dtype = cp.float32)
+
+    #si sumSize est pair rajouter 1
+    sumSize = (sumSize //2 ) * 2 + 1
+    #allocation plan de convolution (carré de 1.0 de taille sumSize)
+    convolve_plane = cp.full(fill_value=1.0 / (sumSize * sumSize), dtype=cp.float32, shape=(sumSize, sumSize))
+
+    if d_volume_IN.dtype == cp.complex64:
+        for p in range(sizeZ):
+            plane = intensite(d_volume_IN[p,:,:])
+            cp_ndimage.convolve(plane, convolve_plane, output = d_focus_OUT[p,:,:], mode = 'reflect')
+    else : # module float32
+        for p in range(sizeZ):
+            plane = d_volume_IN[p,:,:]**2
+            cp_ndimage.convolve(plane, convolve_plane, output = d_focus_OUT[p,:,:], mode = 'reflect')
+
 
 
 
@@ -170,3 +193,5 @@ def focus(d_volume_IN, d_focus_OUT, sumSize, type_of_focus):
         focus_sum_square_of_laplacien(d_volume_IN, d_focus_OUT, sumSize)
     elif type_of_focus == Focus_type.SUM_OF_INTENSITY:
         focus_SUM_OF_INTENSITY(d_volume_IN, d_focus_OUT, sumSize)
+    elif type_of_focus == Focus_type.CUSTOM:
+        focus_CUSTOM(d_volume_IN, d_focus_OUT, sumSize)
